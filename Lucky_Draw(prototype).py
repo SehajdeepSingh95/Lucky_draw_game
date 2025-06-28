@@ -1,13 +1,18 @@
 import random
 print("Welcome to PyLottery!!")
 while True:
-    Participants=int(input("Please enter the number of Lotteries you want to buy: "))
-    Winning_Lottery=random.randint(1000,9999)
-    Lotteries_bought=[]
+    while True:
+        Participants=int(input("Please enter the number of Lotteries you want to buy: "))
+        Winning_Lottery=random.randint(1000,9999)
+        Lotteries_bought=[]
+        if Participants > 9000:
+            print("Sorry you can't buy more than 9000 lotteries")
+        else:
+            break
     for _ in range(Participants):
         ticket=random.randint(1000,9999)
         while ticket in Lotteries_bought:
-                ticket=random.randint(1000,9999)
+            ticket=random.randint(1000,9999)
         Lotteries_bought.append(ticket)
     print(f"Your Lotteries numbers are {Lotteries_bought}")
     if Winning_Lottery in Lotteries_bought:
