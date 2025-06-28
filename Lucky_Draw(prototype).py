@@ -1,4 +1,5 @@
 import random
+
 print("Welcome to PyLottery!!")
 while True:
     while True:
@@ -14,7 +15,8 @@ while True:
         while ticket in Lotteries_bought:
             ticket=random.randint(1000,9999)
         Lotteries_bought.append(ticket)
-    print(f"Your Lotteries numbers are {Lotteries_bought}")
+    print("Your Lotteries numbers are",end=" ")
+    print(*Lotteries_bought,sep=",")
     if Winning_Lottery in Lotteries_bought:
         print(f"Congratulations you have won a lottery!!\nWinning Lottery Number was {Winning_Lottery}")
     else:
